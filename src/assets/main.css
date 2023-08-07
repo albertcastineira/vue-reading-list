@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+select {
+    border-right: 0.5vw solid transparent
+}
