@@ -12,7 +12,6 @@
             <div class="h-[15vh]">
                 <h1 class="font-semibold text-md my-2 text-white">{{ title }}</h1>
                 <p class="text-sm text-[#A5A5A5]">{{ synopsis }}</p>
-                <p></p>
             </div>            
         </div> 
     </div>

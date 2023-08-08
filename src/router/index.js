@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import App from '../App.vue'
-import ReadingList from '../components/ReadingList.vue'
+import Home from '../views/Home.vue'
+import ReadingList from '../views/ReadingList.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', component: App },
-    { path: '/reading-list', component: ReadingList }
+    { path: '/', component: Home, name: "home" },
+    { path: '/reading-list', component: ReadingList, name: "reading-list" }
   ]
 })
 
