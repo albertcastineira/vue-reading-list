@@ -5,19 +5,17 @@
   </main>
 </template>
 
-<script>
-import Header from './components/Header.vue'
+<script setup>
+import Header from "./components/Header.vue"
+import { useBooksStore } from "./stores/library"
 
-export default {
-  data() {
-    return {
-      books: null,
-      readList: null,
-    }
-  },
-  components: {
-    Header,
-  }
-}
+const storeBooks = useBooksStore()
 
+if (!storeBooks.books.length) {    
+     import("./data/books.json").then((module) => { 
+       let dataJson = module.default;
+       let arrBooks = dataJson.library.map((x) => { return { ...x.book, inReadingList: false }; });
+       storeBooks.initialize(arrBooks);
+     }
+)}
 </script>

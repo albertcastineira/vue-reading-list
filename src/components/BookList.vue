@@ -1,29 +1,19 @@
 <template>
     <div class="grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-3">
-        <div v-for="item in data">
+        <div v-for="book in storeBooks.books">
             <Book
-                :title="item.book.title"
-                :cover="item.book.cover" 
-                :synopsis="item.book.synopsis" 
+                :title="book.title"
+                :cover="book.cover" 
+                :synopsis="book.synopsis" 
             />
         </div>
     </div>
 </template>
 
-<script>
+<script setup>
 import Book from './Book.vue'
+import { useBooksStore } from "../stores/library"
 
-import booksJson from '../data/books.json'
-
-export default {
-    data() {
-        return {
-            data: booksJson.library
-        }
-    },
-    components: {
-        Book
-    },
-}
+const storeBooks = useBooksStore()
 
 </script>
