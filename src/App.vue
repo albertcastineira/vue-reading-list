@@ -9,13 +9,8 @@
 import Header from "./components/Header.vue"
 import { useBooksStore } from "./stores/library"
 
-const storeBooks = useBooksStore()
+const booksStore = useBooksStore()
+// Fetch Data
+booksStore.getBooks()
 
-if (!storeBooks.books.length) {    
-     import("./data/books.json").then((module) => { 
-       let dataJson = module.default;
-       let arrBooks = dataJson.library.map((x) => { return { ...x.book, inReadingList: false }; });
-       storeBooks.initialize(arrBooks);
-     }
-)}
 </script>

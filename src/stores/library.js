@@ -5,9 +5,18 @@ export const useBooksStore = defineStore("books",{
     books: [],
   }),
   actions: {
-    initialize(data) {
-      this.books = data
+    async getBooks() {
+      if (!this.books.length) {
+          import("../data/books.json").then((module) => { 
+            let dataJson = module.default;
+            let arrBooks = dataJson.library.map((x) => { return { ...x.book, inReadingList: false }; });
+            this.books = arrBooks
+          },
+      )}
     }
-  }
+  },
+  persist: true,
 })
+
+
 
