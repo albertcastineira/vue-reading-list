@@ -9,7 +9,7 @@
             <router-link v-show="$route.name!=='reading-list'" to="/reading-list" class="inline-flex items-center px-5 py-2 text-sm font-bold text-center text-black bg-[#2ECC71] rounded-lg">
                 Lista de lectura
                 <span class="inline-flex items-center justify-center w-5 h-5 ml-2 text-xs font-semibold text-[#A5A5A5] bg-black rounded-full">
-                    0
+                    {{ booksStore.inReadingList.length }}
                 </span>
             </router-link>
             <router-link v-show="$route.name!=='home'" to="/" class="inline-flex items-center px-5 py-2 text-sm font-bold text-center text-black bg-[#2ECC71] rounded-lg">
@@ -19,17 +19,9 @@
     </header>
 </template>
 
-<script>
+<script setup>
 import { Icon } from '@iconify/vue';
+import { useBooksStore } from "../stores/library"
 
-export default {
-	components: {
-		Icon,
-	},
-    computed: {
-        isReadingListView() {
-            return this.$route.name === 'reading-list'
-        }
-    }
-}
+const booksStore = useBooksStore()
 </script>

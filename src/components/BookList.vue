@@ -1,10 +1,11 @@
 <template>
     <div class="grid xl:grid-cols-6 lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-3">
-        <div v-for="book in booksStore.books">
+        <div v-for="book in booksStore.availableBooks">
             <Book
-                :title="book.title"
+                :title="book.title" 
                 :cover="book.cover" 
-                :synopsis="book.synopsis" 
+                :synopsis="book.synopsis"
+                :ISBN="book.ISBN"
             />
         </div>
     </div>

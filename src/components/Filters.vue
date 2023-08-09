@@ -2,7 +2,7 @@
     <div class="mb-2">
         <div class="grid grid-cols-4">
             <div class="text-start">
-                <h1 class="text-white font-semibold text-lg"><span class="text-[#2ECC71]">13</span> Libros disponibles</h1>
+                <h1 class="text-white font-semibold text-lg"><span class="text-[#2ECC71]">{{ booksStore.availableBooks.length }}</span> Libros disponibles</h1>
             </div>
             <div class="text-end col-span-3">
                 <input type="text" name="book-search" placeholder="Buscar por título" class="px-2 py-1 outline-none rounded bg-[#474747] w-[20vw] mr-4 text-white">
@@ -27,6 +27,8 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { useBooksStore } from "../stores/library"
 
+const booksStore = useBooksStore()
 </script>
