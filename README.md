@@ -1,35 +1,34 @@
-# vue-tailwind-base
+# vue-reading-list
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+The purpose of this project is to learn about Vue3 Basics, Pinia state managment and some basic stuff...
 
 ## Project Setup
 
+Install dependences  
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
+Run dev server  
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+For testing with Vitest
+```sh
+npm run test:unit
+```
 
+Compile & prepare for production
 ```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## Project tech stack
 
-```sh
-npm run test:unit
-```
+* Vite 4
+* Vue 3
+* Pinia
+* Vitest
+* Tailwind CSS
+* Iconify
