@@ -3,7 +3,7 @@
         <h1 class="text-white font-semibold text-lg"><span class="text-[#2ECC71]">{{ booksStore.inReadingList.length }}</span> Libros en tú lista</h1>
     </div>
     <hr class="h-px my-5 bg-[#474747] border-0">
-    <div v-if="!booksStore.inReadingList" class="text-center text-[#A5A5A5] my-10">
+    <div v-if="booksStore.inReadingList.length === 0" class="text-center text-[#A5A5A5] my-10">
         <div class="flex justify-center items-center my-4">
             <p><Icon class="w-20 h-20" icon="material-symbols:book-outline" /></p>
         </div>

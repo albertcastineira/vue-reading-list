@@ -12,5 +12,6 @@ import { useBooksStore } from "./stores/library"
 const booksStore = useBooksStore()
 // Fetch Data
 booksStore.getBooks()
+booksStore.getGenres()
 
 </script>
