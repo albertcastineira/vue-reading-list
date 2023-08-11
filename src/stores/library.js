@@ -5,22 +5,24 @@ export const useBooksStore = defineStore("books",{
     books: [],
     genres: [],
     currentGenreFilter: "all",
-    currentPagesFilter: 0
+    currentPagesFilter: 0,
+    search: "",
+    currentISBN: "",
   }),
   getters: {
     inReadingList() {
       return this.books.filter(book => book.inReadingList)
     },
-    getBook(isbn) {
-      return this.books.filter(book => book.ISBN === isbn)
+    getBook() {
+      return this.books.filter(book => book.ISBN === this.currentISBN)[0]
     },
     filterBooks() {
-      if(this.currentGenreFilter != "all" || this.currentPagesFilter != 0) {
+      if(this.currentGenreFilter != "all" || this.currentPagesFilter != 0 || this.search != "") {
         return this.books.filter((book) => {
-          if(this.currentGenreFilter !="all") {
-            return !book.inReadingList && book.pages >= this.currentPagesFilter && book.genre == this.currentGenreFilter  
+          if(this.currentGenreFilter != "all") {
+            return !book.inReadingList && book.pages >= this.currentPagesFilter && book.genre == this.currentGenreFilter && book.title.toLowerCase().includes(this.search.toLowerCase());
           } else {
-            return !book.inReadingList && book.pages >= this.currentPagesFilter
+            return !book.inReadingList && book.pages >= this.currentPagesFilter && book.title.toLowerCase().includes(this.search.toLowerCase());
           }
         })
       } else {
