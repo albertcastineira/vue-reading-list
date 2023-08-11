@@ -1,6 +1,8 @@
 # vue-reading-list
 
-The purpose of this project is to learn about Vue3 Basics, Pinia state managment and some basic stuff...
+The purpose of this project is to learn about Vue3 Basics, Pinia state managment and some basic stuff...  
+
+![My Image](screenshots/Preview.png)
 
 ## Project Setup
 
