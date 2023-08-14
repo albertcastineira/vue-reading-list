@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <article>
         <div class="mt-2">
             <div class="relative">
                     <img @click="router.push(`/book/${ISBN}`)" :src="cover" class="h-[35vh] w-full rounded cursor-pointer">
@@ -15,7 +15,7 @@
                 <p class="text-sm text-[#A5A5A5]">{{ synopsis }}</p>
             </div>            
         </div> 
-    </div>
+    </article>
     
 </template>
 
