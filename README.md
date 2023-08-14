@@ -2,6 +2,8 @@
 
 The purpose of this project is to learn about Vue3 Basics, Pinia state managment and some basic stuff...  
 
+Check the project on: [ReadingList](https://vue-reading-list.vercel.app/)  
+
 ![My Image](screenshots/Preview.png)
 
 ## Project Setup
